@@ -25,6 +25,17 @@ python -m pip install pymoos
 # Build Instructions
 To compile pymoos you will need [MOOS](https://github.com/themoos/core-moos) compiled and installed as well as Python and pip.
 
+Install core-moos:
+```
+git clone https://github.com/themoos/core-moos.git
+cmake -S core-moos -B core-moos/build \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=/usr/local
+cmake --build core-moos/build --parallel
+sudo cmake --install core-moos/build
+sudo ldconfig # update system dynamic linker run-time bindings
+```
+
 Clone the repository:
 
 ```
